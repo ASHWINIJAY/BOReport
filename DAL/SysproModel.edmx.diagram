@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d433a407fcaa40debea673d3ef591026" Name="Diagram1" ZoomLevel="16">
+        <EntityTypeShape EntityType="SysproCompanyTModel.ApSupplier" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="SysproCompanyTModel.PorMasterDetail" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SysproCompanyTModel.PorSupStkInfo" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <AssociationConnector Association="SysproCompanyTModel.Syspro_FK_PorSupStkInfo_ApSupplier" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SysproCompanyTModel.ChangeLog" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SysproCompanyTModel.ChangeLogExclusion" Width="1.5" PointX="8.375" PointY="4.75" />
+        <EntityTypeShape EntityType="SysproCompanyTModel.vwPOList" Width="1.5" PointX="8.375" PointY="7.75" />
+        <EntityTypeShape EntityType="SysproCompanyTModel.vwPOBrowseList" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SysproCompanyTModel.PorMasterDetail_" Width="1.5" PointX="10.375" PointY="5.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

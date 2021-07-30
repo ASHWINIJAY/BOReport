@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AussieTravellerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DeliveryLoc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeliveryLocation" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AussieTraveller.dbo.Login' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="LoginType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="POLine">
+          <Key>
+            <PropertyRef Name="Shipment" />
+            <PropertyRef Name="PONumber" />
+            <PropertyRef Name="Line" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Shipment" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PONumber" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Line" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shipment">
+          <Key>
+            <PropertyRef Name="ShipmentNumber" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShipmentNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DueDate" Type="date" />
+          <Property Name="SupplierCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShipmentType" Type="nvarchar" MaxLength="100" />
+          <Property Name="ContainerNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeliveryLocation" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO1" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO2" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO3" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO4" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO5" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO6" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO7" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO8" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO9" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO10" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO11" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO12" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO13" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO14" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO15" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO16" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO17" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO18" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO19" Type="nvarchar" MaxLength="100" />
+          <Property Name="PO20" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ShipType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShipmentType" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="AussieTravellerModelStoreContainer">
+          <EntitySet Name="DeliveryLoc" EntityType="Self.DeliveryLoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POLine" EntityType="Self.POLine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shipment" EntityType="Self.Shipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShipType" EntityType="Self.ShipType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Login].[UserId] AS [UserId], 
+    [Login].[UserName] AS [UserName], 
+    [Login].[Password] AS [Password], 
+    [Login].[LoginType] AS [LoginType]
+    FROM [dbo].[Login] AS [Login]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AussieTravellerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DeliveryLoc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeliveryLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ShipType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShipmentType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="AussieTravellerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DeliveryLocs" EntityType="Self.DeliveryLoc" />
+          <EntitySet Name="ShipTypes" EntityType="Self.ShipType" />
+          <EntitySet Name="Shipments" EntityType="AussieTravellerModel.Shipment" />
+          <EntitySet Name="Logins" EntityType="AussieTravellerModel.Login" />
+          <EntitySet Name="POLines" EntityType="AussieTravellerModel.POLine" />
+        </EntityContainer>
+        <EntityType Name="Shipment">
+          <Key>
+            <PropertyRef Name="ShipmentNumber" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShipmentNumber" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DueDate" Type="DateTime" Precision="0" />
+          <Property Name="SupplierCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShipmentType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ContainerNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO6" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO7" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO8" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO9" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO10" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO11" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO12" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO13" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO14" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO15" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO16" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO17" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO18" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO19" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PO20" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LoginType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="POLine">
+          <Key>
+            <PropertyRef Name="Shipment" />
+            <PropertyRef Name="PONumber" />
+            <PropertyRef Name="Line" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Shipment" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PONumber" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Line" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AussieTravellerModelStoreContainer" CdmEntityContainer="AussieTravellerEntities">
+          <EntitySetMapping Name="DeliveryLocs">
+            <EntityTypeMapping TypeName="AussieTravellerModel.DeliveryLoc">
+              <MappingFragment StoreEntitySet="DeliveryLoc">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DeliveryLocation" ColumnName="DeliveryLocation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShipTypes">
+            <EntityTypeMapping TypeName="AussieTravellerModel.ShipType">
+              <MappingFragment StoreEntitySet="ShipType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ShipmentType" ColumnName="ShipmentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shipments">
+            <EntityTypeMapping TypeName="AussieTravellerModel.Shipment">
+              <MappingFragment StoreEntitySet="Shipment">
+                <ScalarProperty Name="PO20" ColumnName="PO20" />
+                <ScalarProperty Name="PO19" ColumnName="PO19" />
+                <ScalarProperty Name="PO18" ColumnName="PO18" />
+                <ScalarProperty Name="PO17" ColumnName="PO17" />
+                <ScalarProperty Name="PO16" ColumnName="PO16" />
+                <ScalarProperty Name="PO15" ColumnName="PO15" />
+                <ScalarProperty Name="PO14" ColumnName="PO14" />
+                <ScalarProperty Name="PO13" ColumnName="PO13" />
+                <ScalarProperty Name="PO12" ColumnName="PO12" />
+                <ScalarProperty Name="PO11" ColumnName="PO11" />
+                <ScalarProperty Name="PO10" ColumnName="PO10" />
+                <ScalarProperty Name="PO9" ColumnName="PO9" />
+                <ScalarProperty Name="PO8" ColumnName="PO8" />
+                <ScalarProperty Name="PO7" ColumnName="PO7" />
+                <ScalarProperty Name="PO6" ColumnName="PO6" />
+                <ScalarProperty Name="PO5" ColumnName="PO5" />
+                <ScalarProperty Name="PO4" ColumnName="PO4" />
+                <ScalarProperty Name="PO3" ColumnName="PO3" />
+                <ScalarProperty Name="PO2" ColumnName="PO2" />
+                <ScalarProperty Name="PO1" ColumnName="PO1" />
+                <ScalarProperty Name="DeliveryLocation" ColumnName="DeliveryLocation" />
+                <ScalarProperty Name="ContainerNumber" ColumnName="ContainerNumber" />
+                <ScalarProperty Name="ShipmentType" ColumnName="ShipmentType" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="ShipmentNumber" ColumnName="ShipmentNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="AussieTravellerModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="LoginType" ColumnName="LoginType" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POLines">
+            <EntityTypeMapping TypeName="AussieTravellerModel.POLine">
+              <MappingFragment StoreEntitySet="POLine">
+                <ScalarProperty Name="Line" ColumnName="Line" />
+                <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+                <ScalarProperty Name="Shipment" ColumnName="Shipment" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
