@@ -25,13 +25,7 @@ namespace POScreen.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ApSupplier> ApSuppliers { get; set; }
-        public virtual DbSet<PorMasterDetail> PorMasterDetails { get; set; }
-        public virtual DbSet<PorSupStkInfo> PorSupStkInfoes { get; set; }
-        public virtual DbSet<ChangeLog> ChangeLogs { get; set; }
-        public virtual DbSet<ChangeLogExclusion> ChangeLogExclusions { get; set; }
-        public virtual DbSet<vwPOList> vwPOLists { get; set; }
-        public virtual DbSet<vwPOBrowseList> vwPOBrowseLists { get; set; }
-        public virtual DbSet<PorMasterDetail_> PorMasterDetail_ { get; set; }
+        public virtual DbSet<vw_FetchInvWarehouse> vw_FetchInvWarehouse { get; set; }
+        public virtual DbSet<vw_FetchBOReport> vw_FetchBOReport { get; set; }
     }
 }

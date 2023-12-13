@@ -5,730 +5,167 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="SysproCompanyTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="ApSupplier">
-          <Key>
-            <PropertyRef Name="Supplier" />
-          </Key>
-          <Property Name="Supplier" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="SupplierName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="SupShortName" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="SupplierType" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="SupplierClass" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Bank" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="Branch" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Telephone" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Fax" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Contact" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Area" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="FaxContact" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserField1" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="UserField2" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="Currency" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="CurrentBalance" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PyrEndBalance" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="LastPurchDate" Type="datetime" />
-          <Property Name="FirstPurchDate" Type="datetime" />
-          <Property Name="LineDiscCode" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="InvDiscCode" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="TermsCode" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="LastChequePrint" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="ReservedForUsa" Type="char" MaxLength="5" Nullable="false" />
-          <Property Name="DefaultChequeDay" Type="decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="YtdAmount1099" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="Required1099" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="GrnMatchReqd" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="LctRequired" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="EdiTypeFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="EdiReceiverCode" Type="varchar" MaxLength="40" Nullable="false" />
-          <Property Name="WithTaxId" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="WithTaxCode" Type="char" MaxLength="5" Nullable="false" />
-          <Property Name="Pyr1099Val" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MerchGlCode" Type="varchar" MaxLength="35" Nullable="false" />
-          <Property Name="FreightGlCode" Type="varchar" MaxLength="35" Nullable="false" />
-          <Property Name="NumMthsBeforDel" Type="decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="NumMonthsZero" Type="decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="PurchValMth1" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth2" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth3" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth4" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth5" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth6" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth7" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth8" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth9" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth10" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth11" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth12" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MtdTaxVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdTaxVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchOrdAllowed" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MinPoVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MinPoMass" Type="decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MinPoVolume" Type="decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="Nationality" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="TaxRegnNum" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="EdiFax" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="BankAccount" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="BankBranch" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="FaxRemitFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="FaxRemitNum" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="PayeRef1099" Type="varchar" MaxLength="16" Nullable="false" />
-          <Property Name="MtdTax2Val" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdTax2Val" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MtdMerchVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MtdFreightVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MtdOtherVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MtdDsbVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdMerchVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdFreightVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdOtherVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdDsbVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PyrMerchVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PyrFreightVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PyrOtherVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PyrDsbVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="LastChequeDate" Type="datetime" />
-          <Property Name="LastChequeBank" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="LastCheque" Type="decimal" Precision="15" Scale="0" Nullable="false" />
-          <Property Name="LastChequeVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="ChLanguage" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="SupplierChName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DateSuppAdded" Type="datetime" />
-          <Property Name="DefaultFmt1099" Type="decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="MinPay1099" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PoDefaultDoc" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="OnHold" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="AskYtdValue1099" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="Contracts" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="PayByEft" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="EftBankAccType" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="DefTaxCode" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="DeliveryTerms" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="TransactionNature" Type="decimal" Precision="3" Scale="0" Nullable="false" />
-          <Property Name="RemitEmail" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="AutoVoucherReqd" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="LanguageCode" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="FaxVoucherFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="FaxVoucherNum" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="VoucherEmail" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="OutOfState" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="CollectTax" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="State" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="CountyZip" Type="char" MaxLength="5" Nullable="false" />
-          <Property Name="City" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="ShippingLocation" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="MtdTaxReliefVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdTaxReliefVal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="WithTaxSupplierInd" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="WithTaxExpenseType" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" />
-        </EntityType>
-        <EntityType Name="ChangeLog">
-          <Key>
-            <PropertyRef Name="ChangeLogID" />
-          </Key>
-          <Property Name="ChangeLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ClassName" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="PropertyName" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Key" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="OriginalValue" Type="varchar(max)" />
-          <Property Name="CurrentValue" Type="varchar(max)" />
-          <Property Name="UserName" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="ChangeDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ChangeLogExclusion">
-          <Key>
-            <PropertyRef Name="ChangeLogExclusionID" />
-          </Key>
-          <Property Name="ChangeLogExclusionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EntityName" Type="varchar" MaxLength="128" Nullable="false" />
-          <Property Name="PropertyName" Type="varchar" MaxLength="128" Nullable="false" />
-        </EntityType>
-        <EntityType Name="PorMasterDetail">
-          <Key>
-            <PropertyRef Name="PurchaseOrder" />
-            <PropertyRef Name="Line" />
-          </Key>
-          <Property Name="PurchaseOrder" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Line" Type="decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="LineType" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MStockCode" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="MStockDes" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="MWarehouse" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="MOrderUom" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="MStockingUom" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="MOrderQty" Type="decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MReceivedQty" Type="decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MLatestDueDate" Type="datetime" />
-          <Property Name="MLastReceiptDat" Type="datetime" />
-          <Property Name="MSupCatalogue" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="MDiscPct1" Type="decimal" Precision="5" Scale="2" Nullable="false" />
-          <Property Name="MDiscPct2" Type="decimal" Precision="5" Scale="2" Nullable="false" />
-          <Property Name="MDiscPct3" Type="decimal" Precision="5" Scale="2" Nullable="false" />
-          <Property Name="MDiscValFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MDiscValue" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MPrice" Type="decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="MForeignPrice" Type="decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="MDecimalsToPrt" Type="decimal" Precision="1" Scale="0" Nullable="false" />
-          <Property Name="MConvFactPrcUm" Type="decimal" Precision="12" Scale="6" Nullable="false" />
-          <Property Name="MMulDivPrc" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MPriceUom" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="MTaxCode" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="MConvFactOrdUm" Type="decimal" Precision="12" Scale="6" Nullable="false" />
-          <Property Name="MMulDivAlloc" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MProductClass" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="MCompleteFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MJob" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="MJobLine" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="MGlCode" Type="varchar" MaxLength="35" Nullable="false" />
-          <Property Name="MUserAuthReqn" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="MRequisition" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="MRequisitionLine" Type="decimal" Precision="3" Scale="0" Nullable="false" />
-          <Property Name="MSalesOrder" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="MSalesOrderLine" Type="decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="MOrigDueDate" Type="datetime" />
-          <Property Name="MReschedDueDate" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MLctConfirmed" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MOriginalLine" Type="decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="MSubcontractOp" Type="decimal" Precision="5" Scale="0" Nullable="false" />
-          <Property Name="MEdiExtractFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MEdiActionFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MInspectionReqd" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MNonsUnitMass" Type="decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MNonsUnitVol" Type="decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MVersion" Type="char" MaxLength="5" Nullable="false" />
-          <Property Name="MRelease" Type="char" MaxLength="5" Nullable="false" />
-          <Property Name="NComment" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="NCommentFromLin" Type="decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="NMscChargeValue" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="NMscChargePrint" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="NComPrintType" Type="char" MaxLength="2" Nullable="false" />
-          <Property Name="NMscChargeTax" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="NCommentFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="NMscChargeFor" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="NMscChargeFLoc" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="NEdiExtract" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MEccFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="MBlanketDate" Type="datetime" />
-          <Property Name="MContractNumber" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="MBlanketContLine" Type="decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="AssetFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="CapexCode" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="CapexLine" Type="decimal" Precision="5" Scale="0" Nullable="false" />
-          <Property Name="SelectionCode" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="SelectionType" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="User1" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="OrderLineStatus" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="AutoVoucherReqd" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="IncludeInMrp" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="WithTaxExpenseType" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" />
-        </EntityType>
-        <EntityType Name="PorMasterDetail+">
-          <Key>
-            <PropertyRef Name="PurchaseOrder" />
-            <PropertyRef Name="Line" />
-          </Key>
-          <Property Name="PurchaseOrder" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Line" Type="decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="Shipment" Type="varchar" MaxLength="50" />
-          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" />
-        </EntityType>
-        <EntityType Name="PorSupStkInfo">
-          <Key>
-            <PropertyRef Name="Supplier" />
-            <PropertyRef Name="StockCode" />
-          </Key>
-          <Property Name="Supplier" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="StockCode" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="SupCatalogueNum" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DemoLeadTime" Type="decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="LastPricePaid" Type="decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="LastReceiptDate" Type="datetime" />
-          <Property Name="LastReceiptQty" Type="decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="OrderQtyUom" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="SupStockDesc" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="SupLongDesc" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="PoText1" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="PoText2" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="PoText3" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="PoText4" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="LctMerchPrice" Type="decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="DefaultPrice" Type="decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="StockItemFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="DefaultPrcUom" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="LastPrcUom" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="AltDocPrice" Type="decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" />
-        </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SysproCompanyT.dbo.vwPOBrowseList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vwPOBrowseList">
+warning 6002: The table/view 'SysproCompanyN.dbo.vw_FetchBOReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_FetchBOReport">
           <Key>
-            <PropertyRef Name="PurchaseOrder" />
-            <PropertyRef Name="Supplier" />
-            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="Salesperson" />
+            <PropertyRef Name="CustomerPoNumber" />
+            <PropertyRef Name="Branch" />
+            <PropertyRef Name="Warehouse" />
+            <PropertyRef Name="CustomerName" />
             <PropertyRef Name="MStockCode" />
-            <PropertyRef Name="MOrderQty" />
-            <PropertyRef Name="MReceivedQty" />
-            <PropertyRef Name="MCompleteFlag" />
-            <PropertyRef Name="Currency" />
             <PropertyRef Name="MStockDes" />
-            <PropertyRef Name="Line" />
-            <PropertyRef Name="PO" />
             <PropertyRef Name="MWarehouse" />
+            <PropertyRef Name="MOrderUom" />
+            <PropertyRef Name="OrderStatus" />
+            <PropertyRef Name="FullfillBO" />
+            <PropertyRef Name="MUnitCost" />
           </Key>
-          <Property Name="PurchaseOrder" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Supplier" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="SupplierName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SalesOrder" Type="varchar" MaxLength="8000" />
+          <Property Name="Salesperson" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="OrderDate" Type="varchar" MaxLength="30" />
+          <Property Name="ODate" Type="datetime" />
+          <Property Name="ReqShipDate" Type="varchar" MaxLength="30" />
+          <Property Name="CustomerPoNumber" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Branch" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Warehouse" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Customer" Type="varchar" MaxLength="8000" />
           <Property Name="MStockCode" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="MOrderQty" Type="decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MReceivedQty" Type="decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MLatestDueDate" Type="datetime" />
-          <Property Name="MLastReceiptDat" Type="datetime" />
-          <Property Name="MCompleteFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="Currency" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="MStockDes" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Line" Type="decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="PO" Type="int" Nullable="false" />
           <Property Name="MWarehouse" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MOrderQty" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="MShipQty" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="MBackOrderQty" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="MOrderUom" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="QtyOnHand" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="OrderStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="FullfillBO" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="MUnitCost" Type="decimal" Precision="15" Scale="5" Nullable="false" />
+          <Property Name="ShippingInstruction" Type="varchar" MaxLength="30" />
+          <Property Name="ProductionStatus" Type="varchar" MaxLength="40" />
+          <Property Name="Courier" Type="varchar" MaxLength="20" />
+          <Property Name="ConNote" Type="varchar" MaxLength="40" />
+          <Property Name="PickedBy" Type="char" MaxLength="5" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SysproCompanyT.dbo.vwPOList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vwPOList">
+warning 6002: The table/view 'SysproCompanyN.dbo.vw_FetchInvWarehouse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_FetchInvWarehouse">
           <Key>
-            <PropertyRef Name="PurchaseOrder" />
-            <PropertyRef Name="Supplier" />
-            <PropertyRef Name="SupplierName" />
-            <PropertyRef Name="MStockCode" />
-            <PropertyRef Name="MOrderQty" />
-            <PropertyRef Name="MReceivedQty" />
-            <PropertyRef Name="MCompleteFlag" />
-            <PropertyRef Name="Currency" />
-            <PropertyRef Name="MStockDes" />
-            <PropertyRef Name="Line" />
-            <PropertyRef Name="PO" />
+            <PropertyRef Name="StockCode" />
+            <PropertyRef Name="Warehouse" />
           </Key>
-          <Property Name="PurchaseOrder" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Supplier" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="SupplierName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="MStockCode" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="MOrderQty" Type="decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MReceivedQty" Type="decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MLatestDueDate" Type="datetime" />
-          <Property Name="MLastReceiptDat" Type="datetime" />
-          <Property Name="MCompleteFlag" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="Currency" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="MStockDes" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Line" Type="decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="PO" Type="int" Nullable="false" />
+          <Property Name="StockCode" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Warehouse" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="QtyOnHand" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="QtyAllocated" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="QtyOnOrder" Type="decimal" Precision="10" Scale="3" />
+          <Property Name="QtyRemaining" Type="decimal" Precision="11" Scale="3" />
         </EntityType>
-        <Association Name="Syspro_FK_PorSupStkInfo_ApSupplier">
-          <End Role="ApSupplier" Type="Self.ApSupplier" Multiplicity="1" />
-          <End Role="PorSupStkInfo" Type="Self.PorSupStkInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ApSupplier">
-              <PropertyRef Name="Supplier" />
-            </Principal>
-            <Dependent Role="PorSupStkInfo">
-              <PropertyRef Name="Supplier" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="SysproCompanyTModelStoreContainer">
-          <EntitySet Name="ApSupplier" EntityType="Self.ApSupplier" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ChangeLog" EntityType="Self.ChangeLog" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ChangeLogExclusion" EntityType="Self.ChangeLogExclusion" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PorMasterDetail" EntityType="Self.PorMasterDetail" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PorMasterDetail+" EntityType="Self.PorMasterDetail+" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PorSupStkInfo" EntityType="Self.PorSupStkInfo" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="vwPOBrowseList" EntityType="Self.vwPOBrowseList" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vw_FetchBOReport" EntityType="Self.vw_FetchBOReport" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vwPOBrowseList].[PurchaseOrder] AS [PurchaseOrder], 
-    [vwPOBrowseList].[Supplier] AS [Supplier], 
-    [vwPOBrowseList].[SupplierName] AS [SupplierName], 
-    [vwPOBrowseList].[MStockCode] AS [MStockCode], 
-    [vwPOBrowseList].[MOrderQty] AS [MOrderQty], 
-    [vwPOBrowseList].[MReceivedQty] AS [MReceivedQty], 
-    [vwPOBrowseList].[MLatestDueDate] AS [MLatestDueDate], 
-    [vwPOBrowseList].[MLastReceiptDat] AS [MLastReceiptDat], 
-    [vwPOBrowseList].[MCompleteFlag] AS [MCompleteFlag], 
-    [vwPOBrowseList].[Currency] AS [Currency], 
-    [vwPOBrowseList].[MStockDes] AS [MStockDes], 
-    [vwPOBrowseList].[Line] AS [Line], 
-    [vwPOBrowseList].[PO] AS [PO], 
-    [vwPOBrowseList].[MWarehouse] AS [MWarehouse]
-    FROM [dbo].[vwPOBrowseList] AS [vwPOBrowseList]</DefiningQuery>
+    [vw_FetchBOReport].[SalesOrder] AS [SalesOrder], 
+    [vw_FetchBOReport].[Salesperson] AS [Salesperson], 
+    [vw_FetchBOReport].[OrderDate] AS [OrderDate], 
+    [vw_FetchBOReport].[ODate] AS [ODate], 
+    [vw_FetchBOReport].[ReqShipDate] AS [ReqShipDate], 
+    [vw_FetchBOReport].[CustomerPoNumber] AS [CustomerPoNumber], 
+    [vw_FetchBOReport].[Branch] AS [Branch], 
+    [vw_FetchBOReport].[Warehouse] AS [Warehouse], 
+    [vw_FetchBOReport].[CustomerName] AS [CustomerName], 
+    [vw_FetchBOReport].[Customer] AS [Customer], 
+    [vw_FetchBOReport].[MStockCode] AS [MStockCode], 
+    [vw_FetchBOReport].[MStockDes] AS [MStockDes], 
+    [vw_FetchBOReport].[MWarehouse] AS [MWarehouse], 
+    [vw_FetchBOReport].[MOrderQty] AS [MOrderQty], 
+    [vw_FetchBOReport].[MShipQty] AS [MShipQty], 
+    [vw_FetchBOReport].[MBackOrderQty] AS [MBackOrderQty], 
+    [vw_FetchBOReport].[MOrderUom] AS [MOrderUom], 
+    [vw_FetchBOReport].[QtyOnHand] AS [QtyOnHand], 
+    [vw_FetchBOReport].[OrderStatus] AS [OrderStatus], 
+    [vw_FetchBOReport].[FullfillBO] AS [FullfillBO], 
+    [vw_FetchBOReport].[MUnitCost] AS [MUnitCost], 
+    [vw_FetchBOReport].[ShippingInstruction] AS [ShippingInstruction], 
+    [vw_FetchBOReport].[ProductionStatus] AS [ProductionStatus], 
+    [vw_FetchBOReport].[Courier] AS [Courier], 
+    [vw_FetchBOReport].[ConNote] AS [ConNote], 
+    [vw_FetchBOReport].[PickedBy] AS [PickedBy]
+    FROM [dbo].[vw_FetchBOReport] AS [vw_FetchBOReport]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vwPOList" EntityType="Self.vwPOList" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vw_FetchInvWarehouse" EntityType="Self.vw_FetchInvWarehouse" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vwPOList].[PurchaseOrder] AS [PurchaseOrder], 
-    [vwPOList].[Supplier] AS [Supplier], 
-    [vwPOList].[SupplierName] AS [SupplierName], 
-    [vwPOList].[MStockCode] AS [MStockCode], 
-    [vwPOList].[MOrderQty] AS [MOrderQty], 
-    [vwPOList].[MReceivedQty] AS [MReceivedQty], 
-    [vwPOList].[MLatestDueDate] AS [MLatestDueDate], 
-    [vwPOList].[MLastReceiptDat] AS [MLastReceiptDat], 
-    [vwPOList].[MCompleteFlag] AS [MCompleteFlag], 
-    [vwPOList].[Currency] AS [Currency], 
-    [vwPOList].[MStockDes] AS [MStockDes], 
-    [vwPOList].[Line] AS [Line], 
-    [vwPOList].[PO] AS [PO]
-    FROM [dbo].[vwPOList] AS [vwPOList]</DefiningQuery>
+    [vw_FetchInvWarehouse].[StockCode] AS [StockCode], 
+    [vw_FetchInvWarehouse].[Warehouse] AS [Warehouse], 
+    [vw_FetchInvWarehouse].[QtyOnHand] AS [QtyOnHand], 
+    [vw_FetchInvWarehouse].[QtyAllocated] AS [QtyAllocated], 
+    [vw_FetchInvWarehouse].[QtyOnOrder] AS [QtyOnOrder], 
+    [vw_FetchInvWarehouse].[QtyRemaining] AS [QtyRemaining]
+    FROM [dbo].[vw_FetchInvWarehouse] AS [vw_FetchInvWarehouse]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="Syspro_FK_PorSupStkInfo_ApSupplier" Association="Self.Syspro_FK_PorSupStkInfo_ApSupplier">
-            <End Role="ApSupplier" EntitySet="ApSupplier" />
-            <End Role="PorSupStkInfo" EntitySet="PorSupStkInfo" />
-          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SysproCompanyTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ApSupplier">
-          <Key>
-            <PropertyRef Name="Supplier" />
-          </Key>
-          <Property Name="Supplier" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SupplierName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SupShortName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SupplierType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="SupplierClass" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Bank" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Branch" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Area" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FaxContact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserField1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserField2" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Currency" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="CurrentBalance" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PyrEndBalance" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="LastPurchDate" Type="DateTime" Precision="3" />
-          <Property Name="FirstPurchDate" Type="DateTime" Precision="3" />
-          <Property Name="LineDiscCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="InvDiscCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TermsCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="LastChequePrint" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ReservedForUsa" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="DefaultChequeDay" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="YtdAmount1099" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="Required1099" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="GrnMatchReqd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="LctRequired" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="EdiTypeFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="EdiReceiverCode" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="WithTaxId" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="WithTaxCode" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Pyr1099Val" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MerchGlCode" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FreightGlCode" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NumMthsBeforDel" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="NumMonthsZero" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="PurchValMth1" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth2" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth3" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth4" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth5" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth6" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth7" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth8" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth9" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth10" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth11" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchValMth12" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MtdTaxVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdTaxVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PurchOrdAllowed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MinPoVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MinPoMass" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MinPoVolume" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="Nationality" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="TaxRegnNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="EdiFax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="BankAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="BankBranch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FaxRemitFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="FaxRemitNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PayeRef1099" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MtdTax2Val" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdTax2Val" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MtdMerchVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MtdFreightVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MtdOtherVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MtdDsbVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdMerchVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdFreightVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdOtherVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdDsbVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PyrMerchVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PyrFreightVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PyrOtherVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PyrDsbVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="LastChequeDate" Type="DateTime" Precision="3" />
-          <Property Name="LastChequeBank" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LastCheque" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-          <Property Name="LastChequeVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="ChLanguage" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="SupplierChName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DateSuppAdded" Type="DateTime" Precision="3" />
-          <Property Name="DefaultFmt1099" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-          <Property Name="MinPay1099" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="PoDefaultDoc" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="OnHold" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="AskYtdValue1099" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Contracts" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="PayByEft" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="EftBankAccType" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="DefTaxCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="DeliveryTerms" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="TransactionNature" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-          <Property Name="RemitEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="AutoVoucherReqd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="LanguageCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="FaxVoucherFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="FaxVoucherNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="VoucherEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="OutOfState" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="CollectTax" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="CountyZip" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="City" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="ShippingLocation" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MtdTaxReliefVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="YtdTaxReliefVal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="WithTaxSupplierInd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="WithTaxExpenseType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-          <NavigationProperty Name="PorSupStkInfoes" Relationship="Self.Syspro_FK_PorSupStkInfo_ApSupplier" FromRole="ApSupplier" ToRole="PorSupStkInfo" />
-        </EntityType>
-        <EntityType Name="PorMasterDetail">
-          <Key>
-            <PropertyRef Name="PurchaseOrder" />
-            <PropertyRef Name="Line" />
-          </Key>
-          <Property Name="PurchaseOrder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Line" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="LineType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MStockCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MStockDes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MWarehouse" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MOrderUom" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MStockingUom" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MOrderQty" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MReceivedQty" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MLatestDueDate" Type="DateTime" Precision="3" />
-          <Property Name="MLastReceiptDat" Type="DateTime" Precision="3" />
-          <Property Name="MSupCatalogue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MDiscPct1" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
-          <Property Name="MDiscPct2" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
-          <Property Name="MDiscPct3" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
-          <Property Name="MDiscValFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MDiscValue" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="MPrice" Type="Decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="MForeignPrice" Type="Decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="MDecimalsToPrt" Type="Decimal" Precision="1" Scale="0" Nullable="false" />
-          <Property Name="MConvFactPrcUm" Type="Decimal" Precision="12" Scale="6" Nullable="false" />
-          <Property Name="MMulDivPrc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MPriceUom" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MTaxCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MConvFactOrdUm" Type="Decimal" Precision="12" Scale="6" Nullable="false" />
-          <Property Name="MMulDivAlloc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MProductClass" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MCompleteFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MJob" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MJobLine" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MGlCode" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MUserAuthReqn" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MRequisition" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MRequisitionLine" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-          <Property Name="MSalesOrder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MSalesOrderLine" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="MOrigDueDate" Type="DateTime" Precision="3" />
-          <Property Name="MReschedDueDate" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MLctConfirmed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MOriginalLine" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="MSubcontractOp" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
-          <Property Name="MEdiExtractFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MEdiActionFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MInspectionReqd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MNonsUnitMass" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MNonsUnitVol" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="MVersion" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MRelease" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="NComment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NCommentFromLin" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="NMscChargeValue" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="NMscChargePrint" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="NComPrintType" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="NMscChargeTax" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="NCommentFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="NMscChargeFor" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-          <Property Name="NMscChargeFLoc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="NEdiExtract" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MEccFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MBlanketDate" Type="DateTime" Precision="3" />
-          <Property Name="MContractNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MBlanketContLine" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
-          <Property Name="AssetFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="CapexCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CapexLine" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
-          <Property Name="SelectionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SelectionType" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="User1" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="OrderLineStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="AutoVoucherReqd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="IncludeInMrp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="WithTaxExpenseType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-        </EntityType>
-        <EntityType Name="PorSupStkInfo">
-          <Key>
-            <PropertyRef Name="Supplier" />
-            <PropertyRef Name="StockCode" />
-          </Key>
-          <Property Name="Supplier" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="StockCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SupCatalogueNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DemoLeadTime" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="LastPricePaid" Type="Decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="LastReceiptDate" Type="DateTime" Precision="3" />
-          <Property Name="LastReceiptQty" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
-          <Property Name="OrderQtyUom" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SupStockDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SupLongDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PoText1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PoText2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PoText3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PoText4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LctMerchPrice" Type="Decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="DefaultPrice" Type="Decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="StockItemFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="DefaultPrcUom" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LastPrcUom" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="AltDocPrice" Type="Decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-          <NavigationProperty Name="ApSupplier" Relationship="Self.Syspro_FK_PorSupStkInfo_ApSupplier" FromRole="PorSupStkInfo" ToRole="ApSupplier" />
-        </EntityType>
-        <Association Name="Syspro_FK_PorSupStkInfo_ApSupplier">
-          <End Role="ApSupplier" Type="Self.ApSupplier" Multiplicity="1" />
-          <End Role="PorSupStkInfo" Type="Self.PorSupStkInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ApSupplier">
-              <PropertyRef Name="Supplier" />
-            </Principal>
-            <Dependent Role="PorSupStkInfo">
-              <PropertyRef Name="Supplier" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="SysproCompanyTEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ApSuppliers" EntityType="Self.ApSupplier" />
-          <EntitySet Name="PorMasterDetails" EntityType="Self.PorMasterDetail" />
-          <EntitySet Name="PorSupStkInfoes" EntityType="Self.PorSupStkInfo" />
-          <AssociationSet Name="Syspro_FK_PorSupStkInfo_ApSupplier" Association="Self.Syspro_FK_PorSupStkInfo_ApSupplier">
-            <End Role="ApSupplier" EntitySet="ApSuppliers" />
-            <End Role="PorSupStkInfo" EntitySet="PorSupStkInfoes" />
-          </AssociationSet>
-          <EntitySet Name="ChangeLogs" EntityType="SysproCompanyTModel.ChangeLog" />
-          <EntitySet Name="ChangeLogExclusions" EntityType="SysproCompanyTModel.ChangeLogExclusion" />
-          <EntitySet Name="vwPOLists" EntityType="SysproCompanyTModel.vwPOList" />
-          <EntitySet Name="vwPOBrowseLists" EntityType="SysproCompanyTModel.vwPOBrowseList" />
-          <EntitySet Name="PorMasterDetail_" EntityType="SysproCompanyTModel.PorMasterDetail_" />
+          <EntitySet Name="vw_FetchInvWarehouse" EntityType="SysproCompanyTModel.vw_FetchInvWarehouse" />
+          <EntitySet Name="vw_FetchBOReport" EntityType="SysproCompanyTModel.vw_FetchBOReport" />
         </EntityContainer>
-        <EntityType Name="ChangeLog">
+        <EntityType Name="vw_FetchInvWarehouse">
           <Key>
-            <PropertyRef Name="ChangeLogID" />
+            <PropertyRef Name="StockCode" />
+            <PropertyRef Name="Warehouse" />
           </Key>
-          <Property Name="ChangeLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClassName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="PropertyName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Key" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="OriginalValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="CurrentValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="UserName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="ChangeDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StockCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Warehouse" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="QtyOnHand" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="QtyAllocated" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="QtyOnOrder" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="QtyRemaining" Type="Decimal" Precision="11" Scale="3" />
         </EntityType>
-        <EntityType Name="ChangeLogExclusion">
+        <EntityType Name="vw_FetchBOReport">
           <Key>
-            <PropertyRef Name="ChangeLogExclusionID" />
-          </Key>
-          <Property Name="ChangeLogExclusionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EntityName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
-          <Property Name="PropertyName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="vwPOList">
-          <Key>
-            <PropertyRef Name="PurchaseOrder" />
-            <PropertyRef Name="Supplier" />
-            <PropertyRef Name="SupplierName" />
+            <PropertyRef Name="Salesperson" />
+            <PropertyRef Name="CustomerPoNumber" />
+            <PropertyRef Name="Branch" />
+            <PropertyRef Name="Warehouse" />
+            <PropertyRef Name="CustomerName" />
             <PropertyRef Name="MStockCode" />
-            <PropertyRef Name="MOrderQty" />
-            <PropertyRef Name="MReceivedQty" />
-            <PropertyRef Name="MCompleteFlag" />
-            <PropertyRef Name="Currency" />
             <PropertyRef Name="MStockDes" />
-            <PropertyRef Name="Line" />
-            <PropertyRef Name="PO" />
-          </Key>
-          <Property Name="PurchaseOrder" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Supplier" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MStockCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="MOrderQty" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
-          <Property Name="MReceivedQty" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
-          <Property Name="MLatestDueDate" Type="DateTime" Precision="3" />
-          <Property Name="MLastReceiptDat" Type="DateTime" Precision="3" />
-          <Property Name="MCompleteFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="Currency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="MStockDes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Line" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
-          <Property Name="PO" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="vwPOBrowseList">
-          <Key>
-            <PropertyRef Name="PurchaseOrder" />
-            <PropertyRef Name="Supplier" />
-            <PropertyRef Name="SupplierName" />
-            <PropertyRef Name="MStockCode" />
-            <PropertyRef Name="MOrderQty" />
-            <PropertyRef Name="MReceivedQty" />
-            <PropertyRef Name="MCompleteFlag" />
-            <PropertyRef Name="Currency" />
-            <PropertyRef Name="MStockDes" />
-            <PropertyRef Name="Line" />
-            <PropertyRef Name="PO" />
             <PropertyRef Name="MWarehouse" />
+            <PropertyRef Name="MOrderUom" />
+            <PropertyRef Name="OrderStatus" />
+            <PropertyRef Name="FullfillBO" />
+            <PropertyRef Name="MUnitCost" />
           </Key>
-          <Property Name="PurchaseOrder" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Supplier" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SalesOrder" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="Salesperson" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OrderDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ODate" Type="DateTime" Precision="3" />
+          <Property Name="ReqShipDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerPoNumber" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Branch" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Warehouse" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
           <Property Name="MStockCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="MOrderQty" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
-          <Property Name="MReceivedQty" Type="Decimal" Nullable="false" Precision="18" Scale="6" />
-          <Property Name="MLatestDueDate" Type="DateTime" Precision="3" />
-          <Property Name="MLastReceiptDat" Type="DateTime" Precision="3" />
-          <Property Name="MCompleteFlag" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="Currency" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
           <Property Name="MStockDes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Line" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
-          <Property Name="PO" Type="Int32" Nullable="false" />
           <Property Name="MWarehouse" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="PorMasterDetail_">
-          <Key>
-            <PropertyRef Name="PurchaseOrder" />
-            <PropertyRef Name="Line" />
-          </Key>
-          <Property Name="PurchaseOrder" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Line" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
-          <Property Name="Shipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="MOrderQty" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="MShipQty" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="MBackOrderQty" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="MOrderUom" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="QtyOnHand" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="OrderStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="FullfillBO" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="MUnitCost" Type="Decimal" Nullable="false" Precision="15" Scale="5" />
+          <Property Name="ShippingInstruction" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ProductionStatus" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Courier" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ConNote" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PickedBy" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -736,302 +173,47 @@ warning 6002: The table/view 'SysproCompanyT.dbo.vwPOList' does not have a prima
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SysproCompanyTModelStoreContainer" CdmEntityContainer="SysproCompanyTEntities">
-          <EntitySetMapping Name="ApSuppliers">
-            <EntityTypeMapping TypeName="SysproCompanyTModel.ApSupplier">
-              <MappingFragment StoreEntitySet="ApSupplier">
-                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
-                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-                <ScalarProperty Name="SupShortName" ColumnName="SupShortName" />
-                <ScalarProperty Name="SupplierType" ColumnName="SupplierType" />
-                <ScalarProperty Name="SupplierClass" ColumnName="SupplierClass" />
-                <ScalarProperty Name="Bank" ColumnName="Bank" />
-                <ScalarProperty Name="Branch" ColumnName="Branch" />
-                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
-                <ScalarProperty Name="Fax" ColumnName="Fax" />
-                <ScalarProperty Name="Contact" ColumnName="Contact" />
-                <ScalarProperty Name="Area" ColumnName="Area" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="FaxContact" ColumnName="FaxContact" />
-                <ScalarProperty Name="UserField1" ColumnName="UserField1" />
-                <ScalarProperty Name="UserField2" ColumnName="UserField2" />
-                <ScalarProperty Name="Currency" ColumnName="Currency" />
-                <ScalarProperty Name="CurrentBalance" ColumnName="CurrentBalance" />
-                <ScalarProperty Name="PyrEndBalance" ColumnName="PyrEndBalance" />
-                <ScalarProperty Name="LastPurchDate" ColumnName="LastPurchDate" />
-                <ScalarProperty Name="FirstPurchDate" ColumnName="FirstPurchDate" />
-                <ScalarProperty Name="LineDiscCode" ColumnName="LineDiscCode" />
-                <ScalarProperty Name="InvDiscCode" ColumnName="InvDiscCode" />
-                <ScalarProperty Name="TermsCode" ColumnName="TermsCode" />
-                <ScalarProperty Name="LastChequePrint" ColumnName="LastChequePrint" />
-                <ScalarProperty Name="ReservedForUsa" ColumnName="ReservedForUsa" />
-                <ScalarProperty Name="DefaultChequeDay" ColumnName="DefaultChequeDay" />
-                <ScalarProperty Name="YtdAmount1099" ColumnName="YtdAmount1099" />
-                <ScalarProperty Name="Required1099" ColumnName="Required1099" />
-                <ScalarProperty Name="GrnMatchReqd" ColumnName="GrnMatchReqd" />
-                <ScalarProperty Name="LctRequired" ColumnName="LctRequired" />
-                <ScalarProperty Name="EdiTypeFlag" ColumnName="EdiTypeFlag" />
-                <ScalarProperty Name="EdiReceiverCode" ColumnName="EdiReceiverCode" />
-                <ScalarProperty Name="WithTaxId" ColumnName="WithTaxId" />
-                <ScalarProperty Name="WithTaxCode" ColumnName="WithTaxCode" />
-                <ScalarProperty Name="Pyr1099Val" ColumnName="Pyr1099Val" />
-                <ScalarProperty Name="MerchGlCode" ColumnName="MerchGlCode" />
-                <ScalarProperty Name="FreightGlCode" ColumnName="FreightGlCode" />
-                <ScalarProperty Name="NumMthsBeforDel" ColumnName="NumMthsBeforDel" />
-                <ScalarProperty Name="NumMonthsZero" ColumnName="NumMonthsZero" />
-                <ScalarProperty Name="PurchValMth1" ColumnName="PurchValMth1" />
-                <ScalarProperty Name="PurchValMth2" ColumnName="PurchValMth2" />
-                <ScalarProperty Name="PurchValMth3" ColumnName="PurchValMth3" />
-                <ScalarProperty Name="PurchValMth4" ColumnName="PurchValMth4" />
-                <ScalarProperty Name="PurchValMth5" ColumnName="PurchValMth5" />
-                <ScalarProperty Name="PurchValMth6" ColumnName="PurchValMth6" />
-                <ScalarProperty Name="PurchValMth7" ColumnName="PurchValMth7" />
-                <ScalarProperty Name="PurchValMth8" ColumnName="PurchValMth8" />
-                <ScalarProperty Name="PurchValMth9" ColumnName="PurchValMth9" />
-                <ScalarProperty Name="PurchValMth10" ColumnName="PurchValMth10" />
-                <ScalarProperty Name="PurchValMth11" ColumnName="PurchValMth11" />
-                <ScalarProperty Name="PurchValMth12" ColumnName="PurchValMth12" />
-                <ScalarProperty Name="MtdTaxVal" ColumnName="MtdTaxVal" />
-                <ScalarProperty Name="YtdTaxVal" ColumnName="YtdTaxVal" />
-                <ScalarProperty Name="PurchOrdAllowed" ColumnName="PurchOrdAllowed" />
-                <ScalarProperty Name="MinPoVal" ColumnName="MinPoVal" />
-                <ScalarProperty Name="MinPoMass" ColumnName="MinPoMass" />
-                <ScalarProperty Name="MinPoVolume" ColumnName="MinPoVolume" />
-                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
-                <ScalarProperty Name="TaxRegnNum" ColumnName="TaxRegnNum" />
-                <ScalarProperty Name="EdiFax" ColumnName="EdiFax" />
-                <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
-                <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
-                <ScalarProperty Name="FaxRemitFlag" ColumnName="FaxRemitFlag" />
-                <ScalarProperty Name="FaxRemitNum" ColumnName="FaxRemitNum" />
-                <ScalarProperty Name="PayeRef1099" ColumnName="PayeRef1099" />
-                <ScalarProperty Name="MtdTax2Val" ColumnName="MtdTax2Val" />
-                <ScalarProperty Name="YtdTax2Val" ColumnName="YtdTax2Val" />
-                <ScalarProperty Name="MtdMerchVal" ColumnName="MtdMerchVal" />
-                <ScalarProperty Name="MtdFreightVal" ColumnName="MtdFreightVal" />
-                <ScalarProperty Name="MtdOtherVal" ColumnName="MtdOtherVal" />
-                <ScalarProperty Name="MtdDsbVal" ColumnName="MtdDsbVal" />
-                <ScalarProperty Name="YtdMerchVal" ColumnName="YtdMerchVal" />
-                <ScalarProperty Name="YtdFreightVal" ColumnName="YtdFreightVal" />
-                <ScalarProperty Name="YtdOtherVal" ColumnName="YtdOtherVal" />
-                <ScalarProperty Name="YtdDsbVal" ColumnName="YtdDsbVal" />
-                <ScalarProperty Name="PyrMerchVal" ColumnName="PyrMerchVal" />
-                <ScalarProperty Name="PyrFreightVal" ColumnName="PyrFreightVal" />
-                <ScalarProperty Name="PyrOtherVal" ColumnName="PyrOtherVal" />
-                <ScalarProperty Name="PyrDsbVal" ColumnName="PyrDsbVal" />
-                <ScalarProperty Name="LastChequeDate" ColumnName="LastChequeDate" />
-                <ScalarProperty Name="LastChequeBank" ColumnName="LastChequeBank" />
-                <ScalarProperty Name="LastCheque" ColumnName="LastCheque" />
-                <ScalarProperty Name="LastChequeVal" ColumnName="LastChequeVal" />
-                <ScalarProperty Name="ChLanguage" ColumnName="ChLanguage" />
-                <ScalarProperty Name="SupplierChName" ColumnName="SupplierChName" />
-                <ScalarProperty Name="DateSuppAdded" ColumnName="DateSuppAdded" />
-                <ScalarProperty Name="DefaultFmt1099" ColumnName="DefaultFmt1099" />
-                <ScalarProperty Name="MinPay1099" ColumnName="MinPay1099" />
-                <ScalarProperty Name="PoDefaultDoc" ColumnName="PoDefaultDoc" />
-                <ScalarProperty Name="OnHold" ColumnName="OnHold" />
-                <ScalarProperty Name="AskYtdValue1099" ColumnName="AskYtdValue1099" />
-                <ScalarProperty Name="Contracts" ColumnName="Contracts" />
-                <ScalarProperty Name="PayByEft" ColumnName="PayByEft" />
-                <ScalarProperty Name="EftBankAccType" ColumnName="EftBankAccType" />
-                <ScalarProperty Name="DefTaxCode" ColumnName="DefTaxCode" />
-                <ScalarProperty Name="DeliveryTerms" ColumnName="DeliveryTerms" />
-                <ScalarProperty Name="TransactionNature" ColumnName="TransactionNature" />
-                <ScalarProperty Name="RemitEmail" ColumnName="RemitEmail" />
-                <ScalarProperty Name="AutoVoucherReqd" ColumnName="AutoVoucherReqd" />
-                <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
-                <ScalarProperty Name="FaxVoucherFlag" ColumnName="FaxVoucherFlag" />
-                <ScalarProperty Name="FaxVoucherNum" ColumnName="FaxVoucherNum" />
-                <ScalarProperty Name="VoucherEmail" ColumnName="VoucherEmail" />
-                <ScalarProperty Name="OutOfState" ColumnName="OutOfState" />
-                <ScalarProperty Name="CollectTax" ColumnName="CollectTax" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="CountyZip" ColumnName="CountyZip" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="ShippingLocation" ColumnName="ShippingLocation" />
-                <ScalarProperty Name="MtdTaxReliefVal" ColumnName="MtdTaxReliefVal" />
-                <ScalarProperty Name="YtdTaxReliefVal" ColumnName="YtdTaxReliefVal" />
-                <ScalarProperty Name="WithTaxSupplierInd" ColumnName="WithTaxSupplierInd" />
-                <ScalarProperty Name="WithTaxExpenseType" ColumnName="WithTaxExpenseType" />
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PorMasterDetails">
-            <EntityTypeMapping TypeName="SysproCompanyTModel.PorMasterDetail">
-              <MappingFragment StoreEntitySet="PorMasterDetail">
-                <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
-                <ScalarProperty Name="Line" ColumnName="Line" />
-                <ScalarProperty Name="LineType" ColumnName="LineType" />
-                <ScalarProperty Name="MStockCode" ColumnName="MStockCode" />
-                <ScalarProperty Name="MStockDes" ColumnName="MStockDes" />
-                <ScalarProperty Name="MWarehouse" ColumnName="MWarehouse" />
-                <ScalarProperty Name="MOrderUom" ColumnName="MOrderUom" />
-                <ScalarProperty Name="MStockingUom" ColumnName="MStockingUom" />
-                <ScalarProperty Name="MOrderQty" ColumnName="MOrderQty" />
-                <ScalarProperty Name="MReceivedQty" ColumnName="MReceivedQty" />
-                <ScalarProperty Name="MLatestDueDate" ColumnName="MLatestDueDate" />
-                <ScalarProperty Name="MLastReceiptDat" ColumnName="MLastReceiptDat" />
-                <ScalarProperty Name="MSupCatalogue" ColumnName="MSupCatalogue" />
-                <ScalarProperty Name="MDiscPct1" ColumnName="MDiscPct1" />
-                <ScalarProperty Name="MDiscPct2" ColumnName="MDiscPct2" />
-                <ScalarProperty Name="MDiscPct3" ColumnName="MDiscPct3" />
-                <ScalarProperty Name="MDiscValFlag" ColumnName="MDiscValFlag" />
-                <ScalarProperty Name="MDiscValue" ColumnName="MDiscValue" />
-                <ScalarProperty Name="MPrice" ColumnName="MPrice" />
-                <ScalarProperty Name="MForeignPrice" ColumnName="MForeignPrice" />
-                <ScalarProperty Name="MDecimalsToPrt" ColumnName="MDecimalsToPrt" />
-                <ScalarProperty Name="MConvFactPrcUm" ColumnName="MConvFactPrcUm" />
-                <ScalarProperty Name="MMulDivPrc" ColumnName="MMulDivPrc" />
-                <ScalarProperty Name="MPriceUom" ColumnName="MPriceUom" />
-                <ScalarProperty Name="MTaxCode" ColumnName="MTaxCode" />
-                <ScalarProperty Name="MConvFactOrdUm" ColumnName="MConvFactOrdUm" />
-                <ScalarProperty Name="MMulDivAlloc" ColumnName="MMulDivAlloc" />
-                <ScalarProperty Name="MProductClass" ColumnName="MProductClass" />
-                <ScalarProperty Name="MCompleteFlag" ColumnName="MCompleteFlag" />
-                <ScalarProperty Name="MJob" ColumnName="MJob" />
-                <ScalarProperty Name="MJobLine" ColumnName="MJobLine" />
-                <ScalarProperty Name="MGlCode" ColumnName="MGlCode" />
-                <ScalarProperty Name="MUserAuthReqn" ColumnName="MUserAuthReqn" />
-                <ScalarProperty Name="MRequisition" ColumnName="MRequisition" />
-                <ScalarProperty Name="MRequisitionLine" ColumnName="MRequisitionLine" />
-                <ScalarProperty Name="MSalesOrder" ColumnName="MSalesOrder" />
-                <ScalarProperty Name="MSalesOrderLine" ColumnName="MSalesOrderLine" />
-                <ScalarProperty Name="MOrigDueDate" ColumnName="MOrigDueDate" />
-                <ScalarProperty Name="MReschedDueDate" ColumnName="MReschedDueDate" />
-                <ScalarProperty Name="MLctConfirmed" ColumnName="MLctConfirmed" />
-                <ScalarProperty Name="MOriginalLine" ColumnName="MOriginalLine" />
-                <ScalarProperty Name="MSubcontractOp" ColumnName="MSubcontractOp" />
-                <ScalarProperty Name="MEdiExtractFlag" ColumnName="MEdiExtractFlag" />
-                <ScalarProperty Name="MEdiActionFlag" ColumnName="MEdiActionFlag" />
-                <ScalarProperty Name="MInspectionReqd" ColumnName="MInspectionReqd" />
-                <ScalarProperty Name="MNonsUnitMass" ColumnName="MNonsUnitMass" />
-                <ScalarProperty Name="MNonsUnitVol" ColumnName="MNonsUnitVol" />
-                <ScalarProperty Name="MVersion" ColumnName="MVersion" />
-                <ScalarProperty Name="MRelease" ColumnName="MRelease" />
-                <ScalarProperty Name="NComment" ColumnName="NComment" />
-                <ScalarProperty Name="NCommentFromLin" ColumnName="NCommentFromLin" />
-                <ScalarProperty Name="NMscChargeValue" ColumnName="NMscChargeValue" />
-                <ScalarProperty Name="NMscChargePrint" ColumnName="NMscChargePrint" />
-                <ScalarProperty Name="NComPrintType" ColumnName="NComPrintType" />
-                <ScalarProperty Name="NMscChargeTax" ColumnName="NMscChargeTax" />
-                <ScalarProperty Name="NCommentFlag" ColumnName="NCommentFlag" />
-                <ScalarProperty Name="NMscChargeFor" ColumnName="NMscChargeFor" />
-                <ScalarProperty Name="NMscChargeFLoc" ColumnName="NMscChargeFLoc" />
-                <ScalarProperty Name="NEdiExtract" ColumnName="NEdiExtract" />
-                <ScalarProperty Name="MEccFlag" ColumnName="MEccFlag" />
-                <ScalarProperty Name="MBlanketDate" ColumnName="MBlanketDate" />
-                <ScalarProperty Name="MContractNumber" ColumnName="MContractNumber" />
-                <ScalarProperty Name="MBlanketContLine" ColumnName="MBlanketContLine" />
-                <ScalarProperty Name="AssetFlag" ColumnName="AssetFlag" />
-                <ScalarProperty Name="CapexCode" ColumnName="CapexCode" />
-                <ScalarProperty Name="CapexLine" ColumnName="CapexLine" />
-                <ScalarProperty Name="SelectionCode" ColumnName="SelectionCode" />
-                <ScalarProperty Name="SelectionType" ColumnName="SelectionType" />
-                <ScalarProperty Name="User1" ColumnName="User1" />
-                <ScalarProperty Name="OrderLineStatus" ColumnName="OrderLineStatus" />
-                <ScalarProperty Name="AutoVoucherReqd" ColumnName="AutoVoucherReqd" />
-                <ScalarProperty Name="IncludeInMrp" ColumnName="IncludeInMrp" />
-                <ScalarProperty Name="WithTaxExpenseType" ColumnName="WithTaxExpenseType" />
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PorSupStkInfoes">
-            <EntityTypeMapping TypeName="SysproCompanyTModel.PorSupStkInfo">
-              <MappingFragment StoreEntitySet="PorSupStkInfo">
-                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <EntitySetMapping Name="vw_FetchInvWarehouse">
+            <EntityTypeMapping TypeName="SysproCompanyTModel.vw_FetchInvWarehouse">
+              <MappingFragment StoreEntitySet="vw_FetchInvWarehouse">
+                <ScalarProperty Name="QtyRemaining" ColumnName="QtyRemaining" />
+                <ScalarProperty Name="QtyOnOrder" ColumnName="QtyOnOrder" />
+                <ScalarProperty Name="QtyAllocated" ColumnName="QtyAllocated" />
+                <ScalarProperty Name="QtyOnHand" ColumnName="QtyOnHand" />
+                <ScalarProperty Name="Warehouse" ColumnName="Warehouse" />
                 <ScalarProperty Name="StockCode" ColumnName="StockCode" />
-                <ScalarProperty Name="SupCatalogueNum" ColumnName="SupCatalogueNum" />
-                <ScalarProperty Name="DemoLeadTime" ColumnName="DemoLeadTime" />
-                <ScalarProperty Name="LastPricePaid" ColumnName="LastPricePaid" />
-                <ScalarProperty Name="LastReceiptDate" ColumnName="LastReceiptDate" />
-                <ScalarProperty Name="LastReceiptQty" ColumnName="LastReceiptQty" />
-                <ScalarProperty Name="OrderQtyUom" ColumnName="OrderQtyUom" />
-                <ScalarProperty Name="SupStockDesc" ColumnName="SupStockDesc" />
-                <ScalarProperty Name="SupLongDesc" ColumnName="SupLongDesc" />
-                <ScalarProperty Name="PoText1" ColumnName="PoText1" />
-                <ScalarProperty Name="PoText2" ColumnName="PoText2" />
-                <ScalarProperty Name="PoText3" ColumnName="PoText3" />
-                <ScalarProperty Name="PoText4" ColumnName="PoText4" />
-                <ScalarProperty Name="LctMerchPrice" ColumnName="LctMerchPrice" />
-                <ScalarProperty Name="DefaultPrice" ColumnName="DefaultPrice" />
-                <ScalarProperty Name="StockItemFlag" ColumnName="StockItemFlag" />
-                <ScalarProperty Name="DefaultPrcUom" ColumnName="DefaultPrcUom" />
-                <ScalarProperty Name="LastPrcUom" ColumnName="LastPrcUom" />
-                <ScalarProperty Name="AltDocPrice" ColumnName="AltDocPrice" />
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ChangeLogs">
-            <EntityTypeMapping TypeName="SysproCompanyTModel.ChangeLog">
-              <MappingFragment StoreEntitySet="ChangeLog">
-                <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
-                <ScalarProperty Name="OriginalValue" ColumnName="OriginalValue" />
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
-                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
-                <ScalarProperty Name="ChangeLogID" ColumnName="ChangeLogID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ChangeLogExclusions">
-            <EntityTypeMapping TypeName="SysproCompanyTModel.ChangeLogExclusion">
-              <MappingFragment StoreEntitySet="ChangeLogExclusion">
-                <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
-                <ScalarProperty Name="EntityName" ColumnName="EntityName" />
-                <ScalarProperty Name="ChangeLogExclusionID" ColumnName="ChangeLogExclusionID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vwPOLists">
-            <EntityTypeMapping TypeName="SysproCompanyTModel.vwPOList">
-              <MappingFragment StoreEntitySet="vwPOList">
-                <ScalarProperty Name="PO" ColumnName="PO" />
-                <ScalarProperty Name="Line" ColumnName="Line" />
-                <ScalarProperty Name="MStockDes" ColumnName="MStockDes" />
-                <ScalarProperty Name="Currency" ColumnName="Currency" />
-                <ScalarProperty Name="MCompleteFlag" ColumnName="MCompleteFlag" />
-                <ScalarProperty Name="MLastReceiptDat" ColumnName="MLastReceiptDat" />
-                <ScalarProperty Name="MLatestDueDate" ColumnName="MLatestDueDate" />
-                <ScalarProperty Name="MReceivedQty" ColumnName="MReceivedQty" />
+          <EntitySetMapping Name="vw_FetchBOReport">
+            <EntityTypeMapping TypeName="SysproCompanyTModel.vw_FetchBOReport">
+              <MappingFragment StoreEntitySet="vw_FetchBOReport">
+                <ScalarProperty Name="PickedBy" ColumnName="PickedBy" />
+                <ScalarProperty Name="ConNote" ColumnName="ConNote" />
+                <ScalarProperty Name="Courier" ColumnName="Courier" />
+                <ScalarProperty Name="ProductionStatus" ColumnName="ProductionStatus" />
+                <ScalarProperty Name="ShippingInstruction" ColumnName="ShippingInstruction" />
+                <ScalarProperty Name="MUnitCost" ColumnName="MUnitCost" />
+                <ScalarProperty Name="FullfillBO" ColumnName="FullfillBO" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="QtyOnHand" ColumnName="QtyOnHand" />
+                <ScalarProperty Name="MOrderUom" ColumnName="MOrderUom" />
+                <ScalarProperty Name="MBackOrderQty" ColumnName="MBackOrderQty" />
+                <ScalarProperty Name="MShipQty" ColumnName="MShipQty" />
                 <ScalarProperty Name="MOrderQty" ColumnName="MOrderQty" />
-                <ScalarProperty Name="MStockCode" ColumnName="MStockCode" />
-                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
-                <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vwPOBrowseLists">
-            <EntityTypeMapping TypeName="SysproCompanyTModel.vwPOBrowseList">
-              <MappingFragment StoreEntitySet="vwPOBrowseList">
                 <ScalarProperty Name="MWarehouse" ColumnName="MWarehouse" />
-                <ScalarProperty Name="PO" ColumnName="PO" />
-                <ScalarProperty Name="Line" ColumnName="Line" />
                 <ScalarProperty Name="MStockDes" ColumnName="MStockDes" />
-                <ScalarProperty Name="Currency" ColumnName="Currency" />
-                <ScalarProperty Name="MCompleteFlag" ColumnName="MCompleteFlag" />
-                <ScalarProperty Name="MLastReceiptDat" ColumnName="MLastReceiptDat" />
-                <ScalarProperty Name="MLatestDueDate" ColumnName="MLatestDueDate" />
-                <ScalarProperty Name="MReceivedQty" ColumnName="MReceivedQty" />
-                <ScalarProperty Name="MOrderQty" ColumnName="MOrderQty" />
                 <ScalarProperty Name="MStockCode" ColumnName="MStockCode" />
-                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
-                <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PorMasterDetail_">
-            <EntityTypeMapping TypeName="SysproCompanyTModel.PorMasterDetail_">
-              <MappingFragment StoreEntitySet="PorMasterDetail+">
-                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
-                <ScalarProperty Name="Shipment" ColumnName="Shipment" />
-                <ScalarProperty Name="Line" ColumnName="Line" />
-                <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Warehouse" ColumnName="Warehouse" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="CustomerPoNumber" ColumnName="CustomerPoNumber" />
+                <ScalarProperty Name="ReqShipDate" ColumnName="ReqShipDate" />
+                <ScalarProperty Name="ODate" ColumnName="ODate" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="Salesperson" ColumnName="Salesperson" />
+                <ScalarProperty Name="SalesOrder" ColumnName="SalesOrder" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

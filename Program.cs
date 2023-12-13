@@ -13,26 +13,15 @@ namespace POScreen
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args = null)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            string c = ProccessLogin();
-            if (c != null)
-            {
-                var LoginDtls = c.Split(',');
-                Application.Run(new frmHome(LoginDtls[0],LoginDtls[1]));
-            }
+            
+                    Application.Run(new frmBOReport());
+               
         }
-        static string ProccessLogin()
-        {
-            using (var f = new frmLogin())
-            {
-                f.ShowDialog();
-
-                return f.logintype+"," + f.loginname;
-            }
-        }
+        
          
     }
 }

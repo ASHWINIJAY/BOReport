@@ -15,7 +15,10 @@ static class ProgramModule
     public static string _office365user;
 
     public static string _office365password;
-    public static string _department;
+    public static string UserID;
     public static string _appFolderEstimation;
-   
+    public static string _sysprousername;
+    public static string _syspropwd;
+    public static string _sysprocomapany;
+
 }
